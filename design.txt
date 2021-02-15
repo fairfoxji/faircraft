@@ -1,0 +1,100 @@
+tbd
+ ai
+
+
+world map
+   dungeon
+
+
+stats
+  gold
+  hp
+  mp
+
+  attack power
+  defense
+
+  haste
+  bullet type
+     size
+     bomb
+     power
+
+
+shot direction
+  thumb, index, middle, ring, little
+  left, right, back
+
+  + attack speed
+
+
+
+skill
+  attack + defense circle,  power decrease by distance quickly 
+
+
+rune
+  speed = speed
+  hp + multiplier
+  mp ditto
+  fairfox += reduce skill decrease rate
+ 
+  3 same to random one of level [-1, 1] except self
+
+char, word, require
+  u  Um   1
+  c Cham  1
+  k  Ko  1
+  o  Ohm  1
+  s  Sol   1
+  b  Ber    2
+  n   Nef  2 
+  x  XeV  2
+  g  Gul  2
+  a Amn 2 
+  r   Ral  3
+  f Fal  3
+  h  Hel   3
+ m  Mal  3
+  p  Pul  3
+  l  Lum  4
+ d  Dol  4
+   t  Tal    5
+  i   Ist   6
+  e El  6
+
+
+
+loot
+  gold
+  rune
+
+  
+daily income
+  gold * multiplier
+
+gold shop
+   +hp
+   +mp
+  bullet type
+     size
+  weapon
+    attack power+
+  armor
+    defense
+  rune
+     
+  
+
+gameplay
+  shift to show life point and slow down
+  tutorial
+    enemies can speak
+  3 stars + 1 optional special achievement?
+    pass: star = 1, multiplier = 1
+    no death: star = 2, multiplier = 2
+    no death and fast:  star = 3, multiplier = 3
+   
+
+ai for enemies
+
