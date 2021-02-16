@@ -18,7 +18,25 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+# Subdirectories
+SourceDir = ./constant \
+            ./gameplay \
+
+for(var, SourceDir) {
+    SOURCES += $$files($$join(var, , , /*.cpp), true)
+    HEADERS += $$files($$join(var, , , /*.h)  , true)
+    FORMS   += $$files($$join(var, , , /*.ui) , true)
+}
+
+
+TRANSLATIONS += translation/faircraft_zh_CN.ts
+
+RESOURCES += \
+  translation/translation.qrc
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+

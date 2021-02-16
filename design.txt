@@ -37,7 +37,7 @@ rune
   speed = speed
   hp + multiplier
   mp ditto
-  fairfox += reduce skill decrease rate
+  fairfox += reduce skill decrease rate, increase bullet size
  
   3 same to random one of level [-1, 1] except self
 
@@ -74,8 +74,8 @@ daily income
   gold * multiplier
 
 gold shop
-  bullet type
-     size
+  hp
+  mp
   weapon
     attack power+
   armor
