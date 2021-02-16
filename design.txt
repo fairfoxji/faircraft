@@ -74,8 +74,6 @@ daily income
   gold * multiplier
 
 gold shop
-   +hp
-   +mp
   bullet type
      size
   weapon
