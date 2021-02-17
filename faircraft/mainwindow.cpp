@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget* parent)
 MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::SetupMenuBar() {
-  auto* menubar = this->menuBar();
+  auto* menubar = this->menu1Bar();
 
   auto* game = menubar->addMenu(UiStrings::Game());
   game->addAction(UiStrings::Exit(), this, &MainWindow::close);
