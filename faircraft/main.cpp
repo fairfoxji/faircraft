@@ -1,17 +1,22 @@
 #include <QApplication>
-#include <QTranslator>
 
-#include "mainwindow.h"
+#include "constant/configs.h"
+#include "controller/languagemanager.h"
+#include "view/mainwindow.h"
+
+using faircraft::Configs;
+using faircraft::LanguageManager;
+using faircraft::MainWindow;
 
 int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
 
-  QTranslator translator;
-  if (!translator.load(":/translation/faircraft_zh_CN.qm")) {
-    qDebug() << "failed";
-    return 1;
-  }
-  a.installTranslator(&translator);
+  QCoreApplication::setOrganizationName(Configs::kOrganizeName);
+  QCoreApplication::setOrganizationDomain(Configs::kOrganizeDomain);
+  QCoreApplication::setApplicationName(Configs::kApplicationName);
+
+  LanguageManager::GetInstance()->AvailableLanguages();
+  LanguageManager::GetInstance()->InstallTranslators();
 
   MainWindow w;
   w.show();

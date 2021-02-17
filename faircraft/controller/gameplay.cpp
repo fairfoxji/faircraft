@@ -1,6 +1,7 @@
 #include "gameplay.h"
 
-GamePlay::GamePlay()
-{
+namespace faircraft {
 
-}
+GamePlay::GamePlay() {}
+
+}  // namespace faircraft

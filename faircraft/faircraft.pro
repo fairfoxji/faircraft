@@ -16,6 +16,7 @@ DEFINES += FAIRCRAFT_VERSION=\\\"$${FAIRCRAFT_VERSION}\\\"
 # Subdirectories
 SourceDir = ./constant \
             ./controller \
+            ./view \
 
 for(var, SourceDir) {
     SOURCES += $$files($$join(var, , , /*.cpp), true)
@@ -25,16 +26,14 @@ for(var, SourceDir) {
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+
 
 HEADERS += \
-    mainwindow.h
-
-FORMS += \
-    mainwindow.ui
 
 
-TRANSLATIONS += translation/faircraft_zh_CN.ts
+TRANSLATIONS += \
+    translation/faircraft_zh_CN.ts \
+    translation/faircraft_en_US.ts \
 
 RESOURCES += \
   translations.qrc
@@ -44,4 +43,4 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-
+FORMS +=

@@ -70,9 +70,6 @@ loot
   rune
 
   
-daily income
-  gold * multiplier
-
 gold shop
   hp
   mp

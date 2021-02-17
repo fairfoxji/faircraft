@@ -3,6 +3,8 @@
 
 #include <QString>
 
+namespace faircraft {
+
 class UiStrings {
  public:
   // Menu
@@ -15,6 +17,10 @@ class UiStrings {
   static QString Exit();
   static QString Languages();
 
+  // Languages
+  static QString SystemLanguage();
+  static QString TranslatedLanguageName(const QString& qml_file);
+
  private:
   static constexpr char kAppName[] = QT_TR_NOOP("Faircraft");
 
@@ -25,14 +31,20 @@ class UiStrings {
   static constexpr char kLanguages[] = QT_TR_NOOP("&Languages");
   static constexpr char kHelp[] = QT_TR_NOOP("&Help");
   static constexpr char kAbout[] = QT_TR_NOOP("&About %1");
-
   static constexpr char kAboutTitle[] = QT_TR_NOOP("About %1");
   static constexpr char kAboutMessage[] = QT_TR_NOOP(
       "<p><b>%1 %2</b></p>"
       "<p>Copyright © 2021 Ning Ji (fairfoxji@gmail.com).  All rights "
       "reserved.</p>");
 
+  // Languages
+  static constexpr char kSystemLanguage[] = QT_TR_NOOP("System Language");
+  static constexpr char kTheLanguageName[] =
+      QT_TRANSLATE_NOOP("LanguageChooser", "English");
+
   UiStrings() = delete;
 };
+
+}  // namespace faircraft
 
 #endif  // UISTRINGS_H

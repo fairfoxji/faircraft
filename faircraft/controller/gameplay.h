@@ -1,11 +1,13 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
+namespace faircraft {
 
-class GamePlay
-{
-public:
-    GamePlay();
+class GamePlay {
+ public:
+  GamePlay();
 };
 
-#endif // GAMEPLAY_H
+}  // namespace faircraft
+
+#endif  // GAMEPLAY_H
