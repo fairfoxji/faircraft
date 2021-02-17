@@ -29,7 +29,8 @@ class UiStrings {
   static constexpr char kAboutTitle[] = QT_TR_NOOP("About %1");
   static constexpr char kAboutMessage[] = QT_TR_NOOP(
       "<p><b>%1 0.1</b></p>"
-      "<p>Copyright © 2021 Ning Ji.  All rights reserved.</p>");
+      "<p>Copyright © 2021 Ning Ji(fairfoxji@gmail.com).  All rights "
+      "reserved.</p>");
 
   UiStrings() = delete;
 };

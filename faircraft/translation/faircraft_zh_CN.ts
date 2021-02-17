@@ -61,8 +61,12 @@
     </message>
     <message>
         <location filename="../constant/uistrings.h" line="30"/>
+        <source>&lt;p&gt;&lt;b&gt;%1 0.1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2021 Ning Ji(fairfoxji@gmail.com).  All rights reserved.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;b&gt;%1 0.1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2021 嵇宁(fairfoxji@gmail.com)  版权所有&lt;/p&gt;</translation>
+    </message>
+    <message>
         <source>&lt;p&gt;&lt;b&gt;%1 0.1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2021 Ning Ji.  All rights reserved.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;%1 0.1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2021 嵇宁  版权所有&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;%1 0.1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2021 嵇宁  版权所有&lt;/p&gt;</translation>
     </message>
 </context>
 </TS>
