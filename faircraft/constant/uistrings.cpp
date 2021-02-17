@@ -27,5 +27,5 @@ QString UiStrings::About() { return tr(kAbout).arg(tr(kAppName)); }
 QString UiStrings::AboutTitle() { return tr(kAboutTitle).arg(tr(kAppName)); }
 
 QString UiStrings::AboutMessage() {
-  return tr(kAboutMessage).arg(tr(kAppName));
+  return tr(kAboutMessage).arg(tr(kAppName)).arg(FAIRCRAFT_VERSION);
 }
