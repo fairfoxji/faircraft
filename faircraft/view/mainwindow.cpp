@@ -1,43 +1,46 @@
 #include "mainwindow.h"
 
-#include <QAction>
-#include <QMenuBar>
 #include <QMessageBox>
 
-#include "constant/uistrings.h"
+#include "chooselanguagedialog.h"
 #include "controller/preferences.h"
+#include "ui_mainwindow.h"
+#include "uistrings.h"
 
 namespace faircraft {
 
-MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
-  SetupMenuBar();
-  Translate();
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
+  ui->setupUi(this);
 }
 
-void MainWindow::SetupMenuBar() {
-  auto* menubar = this->menuBar();
-
-  game_ = menubar->addMenu(QStringLiteral(""));
-  exit_ = game_->addAction(QStringLiteral(""), this, &MainWindow::close);
-
-  settings_ = menubar->addMenu(QStringLiteral(""));
-  languages_ = settings_->addAction(QStringLiteral(""));
-
-  help_ = menubar->addMenu(QStringLiteral(""));
-  about_ = help_->addAction(QStringLiteral(""), this, &MainWindow::About);
-}
+MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::About() {
-  QMessageBox::about(this, UiStrings::AboutTitle(), UiStrings::AboutMessage());
+  QMessageBox::about(
+      this, tr("About %1").arg(UiStrings::AppName()),
+      tr("<p><b>%1 %2</b></p>"
+         "<p>Copyright © 2021 Ning Ji (fairfoxji@gmail.com).  All rights "
+         "reserved.</p>")
+          .arg(UiStrings::AppName())
+          .arg(QStringLiteral(FAIRCRAFT_VERSION)));
+}
+
+void MainWindow::ChooseLanguage() {
+  ChooseLanguageDialog dialog;
+  int ret = dialog.exec();
+  if (ret == QDialog::Accepted) {
+    Preferences::GetInstance()->SetLanguage(dialog.Selected());
+  }
 }
 
 void MainWindow::Translate() {
-  game_->setTitle(UiStrings::Game());
-  exit_->setText(UiStrings::Exit());
-  settings_->setTitle(UiStrings::Settings());
-  languages_->setText(UiStrings::Languages());
-  help_->setTitle(UiStrings::Help());
-  about_->setText(UiStrings::About());
+  this->ui->menu_Game->setTitle(tr("&Game"));
+  this->ui->menu_Help->setTitle(tr("&Help"));
+  this->ui->menu_Settings->setTitle(tr("&Settings"));
+  this->ui->action_About->setText(tr("&About"));
+  this->ui->action_Exit->setText(tr("&Exit"));
+  this->ui->action_Language->setText(tr("&Language"));
 }
 
 }  // namespace faircraft

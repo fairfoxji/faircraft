@@ -6,8 +6,8 @@
 #include <QLibraryInfo>
 #include <QString>
 
-#include "constant/uistrings.h"
 #include "preferences.h"
+#include "view/uistrings.h"
 
 namespace faircraft {
 
@@ -25,7 +25,7 @@ LanguageManager* LanguageManager::GetInstance() {
   return language_manager;
 }
 
-const QMap<QString, QString>& LanguageManager::AvailableLanguages() const {
+const std::vector<QLocale>& LanguageManager::AvailableLanguages() const {
   return languages_;
 }
 
@@ -91,16 +91,23 @@ LanguageManager::LanguageManager() {
         strlen(kTranslationFileName) + strlen(kTranslationFilePrefix));
     qDebug() << "Full path " << iterator.filePath();
     qDebug() << "Local name " << locale_name;
+
+    QLocale locale("nonone");
+    qDebug() << "Bad: " << locale;
+    qDebug() << "Bad name: " << locale.name();
+
     if (!locale_name.isEmpty()) {
-      languages_[locale_name] =
-          UiStrings::TranslatedLanguageName(iterator.filePath());
+      QLocale locale(locale_name);
+      if (locale.name() != "C") {
+        languages_.push_back(locale);
+      }
     }
   }
 
-  QMap<QString, QString>::const_iterator i = languages_.constBegin();
-  while (i != languages_.constEnd()) {
-    qDebug() << i.key() << ": " << i.value();
-    ++i;
+  for (const QLocale& locale : languages_) {
+    qDebug() << locale.name();
+    qDebug() << locale.nativeLanguageName();
+    qDebug() << locale.nativeCountryName();
   }
   qDebug() << "Total " << languages_.size();
 }

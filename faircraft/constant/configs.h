@@ -5,6 +5,7 @@ namespace faircraft {
 
 class Configs {
  public:
+  // Names
   static constexpr char kOrganizeName[] = "Fairfox Soft";
   static constexpr char kOrganizeDomain[] = "fairfoxji.com";
   static constexpr char kApplicationName[] = "Faircraft";
