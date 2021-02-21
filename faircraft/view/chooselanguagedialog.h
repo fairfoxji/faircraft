@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QLocale>
 
+#include "myradiobutton.h"
+
 namespace faircraft {
 
 namespace Ui {
@@ -20,7 +22,7 @@ class ChooseLanguageDialog : public QDialog {
   QString Selected() const;
 
  private:
-  QString selected_;
+  std::vector<const MyRadioButton *> buttons_;
   Ui::ChooseLanguageDialog *ui;
 };
 

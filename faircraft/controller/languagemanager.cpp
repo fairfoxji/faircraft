@@ -92,10 +92,6 @@ LanguageManager::LanguageManager() {
     qDebug() << "Full path " << iterator.filePath();
     qDebug() << "Local name " << locale_name;
 
-    QLocale locale("nonone");
-    qDebug() << "Bad: " << locale;
-    qDebug() << "Bad name: " << locale.name();
-
     if (!locale_name.isEmpty()) {
       QLocale locale(locale_name);
       if (locale.name() != "C") {

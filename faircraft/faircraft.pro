@@ -31,7 +31,6 @@ SOURCES += \
 HEADERS += \
 
 
-
 TRANSLATIONS += \
     translation/faircraft_zh_CN.ts \
     translation/faircraft_en_US.ts \
