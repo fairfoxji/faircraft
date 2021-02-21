@@ -20,6 +20,8 @@ class MainWindow : public QMainWindow, public Translatable {
  public slots:
   void About();
   void ChooseLanguage();
+
+ private slots:
   void Translate() override;
 
  private:
